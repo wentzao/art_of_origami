@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>摺/學 Art of Origami | 文藻美語</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700&family=Zen+Maru+Gothic:wght@500;700&display=swap"
+        rel="stylesheet">
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="antialiased">
+
+    <!-- 導航 -->
+    <nav class="fixed w-full z-50 p-4 bg-white/90 backdrop-blur-md shadow-sm transition-all duration-300" id="navbar">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Left: Badge -->
+            <div class="flex-1 flex items-center">
+                <span class="hidden md:inline-block bg-[#02a568] px-3 py-1 rounded-full text-white text-xs font-bold">
+                    <i class="fas fa-star mr-1"></i>大甲文藻美語：寒假特別企劃<i class="fas fa-star ml-1"></i>
+                </span>
+            </div>
+            <!-- Center: Title -->
+            <a href="#" class="text-2xl font-bold text-orange-500 flex items-center gap-2 no-underline">
+                <i class="fas fa-paper-plane"></i> 摺 / 學
+            </a>
+            <!-- Right: Nav Links -->
+            <div class="flex-1 flex items-center justify-end gap-6">
+                <a href="#intro"
+                    class="text-sm font-bold text-gray-600 hover:text-orange-500 transition hidden md:block">首頁</a>
+                <a href="#history"
+                    class="text-sm font-bold text-gray-600 hover:text-orange-500 transition hidden md:block">演變</a>
+                <a href="#advantages"
+                    class="text-sm font-bold text-gray-600 hover:text-orange-500 transition hidden md:block">工程優勢</a>
+                <a href="#lab-section"
+                    class="text-sm font-bold text-gray-600 hover:text-orange-500 transition hidden md:block">
+                    黑科技實驗室
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header (Hero) -->
+    <header id="intro"
+        class="min-h-screen flex items-center justify-center warm-gradient relative overflow-hidden pt-20">
+        <!-- 裝飾圖案 (Horse Pattern Only) -->
+        <!-- Row 1 -->
+        <div class="absolute top-16 left-6 opacity-10"><i class="fas fa-horse text-8xl text-orange-300 rotate-12"></i>
+        </div>
+        <div class="absolute top-12 left-[20%] opacity-8"><i
+                class="fas fa-horse text-9xl text-orange-200 -rotate-15"></i></div>
+        <div class="absolute top-20 left-[40%] opacity-10"><i
+                class="fas fa-horse text-8xl text-orange-300 rotate-25"></i></div>
+        <div class="absolute top-14 right-[30%] opacity-8"><i
+                class="fas fa-horse text-9xl text-orange-200 -rotate-8"></i></div>
+        <div class="absolute top-18 right-[12%] opacity-10"><i
+                class="fas fa-horse text-8xl text-orange-300 rotate-18"></i></div>
+        <div class="absolute top-24 right-4 opacity-8"><i class="fas fa-horse text-9xl text-orange-200 -rotate-22"></i>
+        </div>
+        <!-- Row 2 -->
+        <div class="absolute top-[28%] left-4 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-10"></i></div>
+        <div class="absolute top-[25%] left-[25%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-30"></i></div>
+        <div class="absolute top-[30%] left-[48%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-18"></i></div>
+        <div class="absolute top-[26%] right-[20%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-15"></i></div>
+        <div class="absolute top-[32%] right-6 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-25"></i></div>
+        <!-- Row 3 -->
+        <div class="absolute top-[48%] left-8 opacity-8"><i class="fas fa-horse text-8xl text-orange-200 rotate-20"></i>
+        </div>
+        <div class="absolute top-[45%] left-[18%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-12"></i></div>
+        <div class="absolute top-[50%] left-[38%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-35"></i></div>
+        <div class="absolute top-[46%] right-[28%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-20"></i></div>
+        <div class="absolute top-[52%] right-[10%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-8"></i></div>
+        <div class="absolute top-[48%] right-4 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-28"></i></div>
+        <!-- Row 4 -->
+        <div class="absolute bottom-[32%] left-6 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-15"></i></div>
+        <div class="absolute bottom-[35%] left-[22%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-30"></i></div>
+        <div class="absolute bottom-[30%] left-[42%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-22"></i></div>
+        <div class="absolute bottom-[38%] right-[25%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-15"></i></div>
+        <div class="absolute bottom-[33%] right-8 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-28"></i></div>
+        <!-- Row 5 -->
+        <div class="absolute bottom-[18%] left-4 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-18"></i></div>
+        <div class="absolute bottom-[22%] left-[28%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-10"></i></div>
+        <div class="absolute bottom-[20%] right-[32%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-25"></i></div>
+        <div class="absolute bottom-[24%] right-[15%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-18"></i></div>
+        <div class="absolute bottom-[18%] right-4 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-12"></i></div>
+        <!-- Row 6 (Bottom) -->
+        <div class="absolute bottom-10 left-8 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-25"></i></div>
+        <div class="absolute bottom-14 left-[20%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-20"></i></div>
+        <div class="absolute bottom-8 left-[45%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-12"></i></div>
+        <div class="absolute bottom-16 right-[28%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-32"></i></div>
+        <div class="absolute bottom-10 right-[12%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-20"></i></div>
+        <div class="absolute bottom-14 right-4 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-15"></i></div>
+
+        <div class="container mx-auto px-6 max-w-6xl grid md:grid-cols-2 gap-12 items-center relative z-10">
+            <div class="space-y-6 text-left">
+                <h1 class="text-5xl md:text-7xl font-bold text-gray-800 leading-tight">
+                    一張紙的<br>
+                    <span class="title-underline">無限可能</span>
+                </h1>
+                <p class="text-xl text-gray-600 leading-relaxed">
+                    從傳統的馬年紅包袋，到外太空的衛星面板。
+                    當我們摺起這張紙，我們摺疊的不只是藝術，
+                    更是幾何學與未來的科學。
+                </p>
+            </div>
+            <div class="relative">
+                <div
+                    class="bg-white p-4 rounded-3xl shadow-xl transform rotate-3 hover:rotate-0 transition duration-500 max-w-md mx-auto">
+                    <img src="assets/top.jpg" alt="摺紙藝術與幾何" class="rounded-2xl w-full h-auto object-cover shadow-inner">
+                    <div class="mt-4 text-center font-medium text-gray-500">
+                        「手腦並用，摺出未來。」
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave to History -->
+        <svg class="absolute bottom-0 left-0 w-full text-slate-900 z-0" viewBox="0 0 1200 120"
+            preserveAspectRatio="none" style="height: 60px;">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,738.64,14.65c-100-19.11-198.3-13.13-257.55,1.52S321.39,56.44,321.39,56.44c-30.86,4.89-60.61,7.24-88.75,7C172.07,62.88,96.53,51.81,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                fill="currentColor"></path>
+        </svg>
+    </header>
+
+    <!-- Quiz Section: Origami Facts (Carousel) -->
+    <section id="quiz" class="py-24 bg-slate-900 relative overflow-hidden min-h-screen flex flex-col justify-center">
+        <!-- Top Wave (Transition from Header) -->
+
+
+        <!-- Background Decor -->
+        <div
+            class="absolute top-0 right-0 w-96 h-96 bg-indigo-500/10 rounded-full mix-blend-overlay filter blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-96 h-96 bg-teal-500/10 rounded-full mix-blend-overlay filter blur-3xl opacity-50 transform -translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="container mx-auto px-6 max-w-5xl relative z-10 flex flex-col items-center">
+
+            <div class="text-center mb-12">
+                <span class="text-teal-400 font-mono text-sm tracking-widest mb-2 block">INTERACTIVE CHALLENGE</span>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-6">摺紙冷知識挑戰</h2>
+                <div class="w-16 h-1 bg-teal-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Carousel Container -->
+            <div class="relative w-full max-w-lg mx-auto">
+
+                <!-- Navigation Buttons -->
+                <!-- Navigation Buttons (Responsive Postioning) -->
+                <button onclick="changeQuizQuestion(-1)"
+                    class="absolute left-2 md:left-0 top-1/2 -translate-y-1/2 md:-translate-x-24 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition backdrop-blur-sm z-20 shadow-lg border border-white/10">
+                    <i class="fas fa-chevron-left text-lg md:text-xl"></i>
+                </button>
+                <button onclick="changeQuizQuestion(1)"
+                    class="absolute right-2 md:right-0 top-1/2 -translate-y-1/2 md:translate-x-24 w-10 h-10 md:w-12 md:h-12 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition backdrop-blur-sm z-20 shadow-lg border border-white/10">
+                    <i class="fas fa-chevron-right text-lg md:text-xl"></i>
+                </button>
+
+                <!-- Question 1: Folding Limit -->
+                <div class="quiz-question group h-[450px] perspective-1000 cursor-pointer animate-fade-in"
+                    onclick="toggleFlip(this)">
+                    <div
+                        class="flip-inner relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]">
+                        <!-- Front -->
+                        <div
+                            class="absolute inset-0 w-full h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden] hover:bg-white/10 transition shadow-2xl">
+                            <div class="w-20 h-20 rounded-full bg-pink-500/20 flex items-center justify-center mb-6">
+                                <i class="fas fa-scroll text-4xl text-pink-300"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Q1: 7次極限傳說</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed">傳說中...<br>一張紙最多只能對摺 7 次<br>這是真的嗎？</p>
+                            <span
+                                class="mt-8 text-pink-400 text-sm font-bold border border-pink-500/30 px-4 py-2 rounded-full group-hover:bg-pink-500 group-hover:text-white transition">揭曉真相</span>
+                        </div>
+                        <!-- Back -->
+                        <div
+                            class="absolute inset-0 w-full h-full bg-pink-600 rounded-3xl overflow-hidden shadow-2xl border border-white/20 [backface-visibility:hidden] [transform:rotateY(180deg)]">
+                            <!-- Background Image -->
+                            <img src="https://i.ytimg.com/vi/AfPDvhKvaa0/maxresdefault.jpg"
+                                class="absolute inset-0 w-full h-full object-cover opacity-30 mix-blend-multiply">
+
+                            <!-- Content -->
+                            <div class="relative z-10 h-full flex flex-col items-center justify-center p-8 text-center">
+                                <div class="text-6xl font-bold text-white mb-2">錯！</div>
+                                <p class="text-pink-200 text-lg mb-4">世界紀錄是 12 次</p>
+                                <div
+                                    class="bg-black/60 backdrop-blur-sm p-5 rounded-2xl w-full text-left border border-white/10">
+                                    <p class="text-white/90 text-sm mb-3">
+                                        <i class="fas fa-user-graduate mr-2 text-pink-400"></i><b>Britney Gallivan</b>
+                                    </p>
+                                    <p class="text-gray-200 text-xs leading-relaxed">
+                                        2002年，高中生 Britney 推導出公式 L = πt/6(2^n + 4)(2^n - 1)，並用 <b>1.2公里</b> 長的衛生紙打破紀錄！
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 2: Moon Fold -->
+                <div class="quiz-question group h-[450px] perspective-1000 cursor-pointer hidden"
+                    onclick="toggleFlip(this)">
+                    <div
+                        class="flip-inner relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]">
+                        <!-- Front -->
+                        <div
+                            class="absolute inset-0 w-full h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden] hover:bg-white/10 transition shadow-2xl">
+                            <div class="w-20 h-20 rounded-full bg-indigo-500/20 flex items-center justify-center mb-6">
+                                <i class="fas fa-moon text-4xl text-indigo-300 animate-pulse"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-white mb-4">Q2: 月球摺紙</h3>
+                            <p class="text-gray-300 text-lg leading-relaxed">一張普通 A4 紙<br>對摺幾次後，厚度可以到達月球？</p>
+                            <span
+                                class="mt-8 text-indigo-400 text-sm font-bold border border-indigo-500/30 px-4 py-2 rounded-full group-hover:bg-indigo-500 group-hover:text-white transition">顯示答案</span>
+                        </div>
+                        <!-- Back -->
+                        <div
+                            class="absolute inset-0 w-full h-full bg-indigo-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden] [transform:rotateY(180deg)] shadow-2xl border border-white/20">
+                            <div class="text-7xl font-bold text-white mb-2">42次</div>
+                            <p class="text-indigo-200 mb-6 font-medium">指數成長的威力！</p>
+                            <div
+                                class="bg-black/30 p-6 rounded-2xl text-left w-full text-sm font-mono text-indigo-100 space-y-2">
+                                <p class="flex justify-between"><span>厚度:</span> <span>0.1mm × 2^42</span></p>
+                                <p class="flex justify-between"><span>總長:</span> <span>≈ 439,804 km</span></p>
+                                <div class="h-px bg-white/20 my-2"></div>
+                                <p class="text-green-400 text-center font-bold">> 地月距離 (384,400km)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Question 3: Cactus -->
+                <div class="quiz-question group h-[450px] perspective-1000 cursor-pointer hidden"
+                    onclick="toggleFlip(this)">
+                    <div
+                        class="flip-inner relative w-full h-full transition-transform duration-700 [transform-style:preserve-3d]">
+                        <!-- Front -->
+                        <div
+                            class="absolute inset-0 w-full h-full bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl overflow-hidden [backface-visibility:hidden] hover:bg-white/10 transition shadow-2xl">
+                            <img src="assets/origami_cactus.jpg" alt="Origami Cactus"
+                                class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:opacity-80 transition">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent flex flex-col items-center justify-end p-8 text-center pb-12">
+                                <h3 class="text-2xl font-bold text-white mb-2">Q3: 仙人掌之謎</h3>
+                                <p class="text-gray-300 text-lg mb-4">這個有數百根刺的複雜作品<br>不剪裁不黏貼，需要幾張紙？</p>
+                                <span
+                                    class="mt-2 text-orange-400 text-sm font-bold border border-orange-500/30 px-4 py-2 rounded-full group-hover:bg-orange-500 group-hover:text-white transition">顯示答案</span>
+                            </div>
+                        </div>
+                        <!-- Back -->
+                        <div
+                            class="absolute inset-0 w-full h-full bg-gradient-to-br from-orange-600 to-red-600 rounded-3xl p-8 flex flex-col items-center justify-center text-center [backface-visibility:hidden] [transform:rotateY(180deg)] shadow-2xl border border-white/20">
+                            <div class="text-7xl font-bold text-white mb-4">1張！</div>
+                            <p class="text-orange-100 text-xl mb-6 font-bold">一張正方形紙的奇蹟</p>
+                            <p class="text-white/90 leading-relaxed text-lg">
+                                這是現代<b>「技術摺紙」</b>的展現。<br><br>
+                                透過數學運算規劃摺痕圖 (Crease Pattern)，將一張紙的面積發揮到極致。
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Pagination Dots -->
+                <div class="flex gap-3 mt-8 justify-center">
+                    <div class="quiz-dot h-2 rounded-full bg-white w-8 transition-all duration-300"></div>
+                    <div class="quiz-dot h-2 rounded-full bg-white/30 w-2 transition-all duration-300"></div>
+                    <div class="quiz-dot h-2 rounded-full bg-white/30 w-2 transition-all duration-300"></div>
+                </div>
+
+            </div>
+
+            <style>
+                .flipped {
+                    transform: rotateY(180deg);
+                }
+
+                @keyframes fadeIn {
+                    from {
+                        opacity: 0;
+                        transform: scale(0.95);
+                    }
+
+                    to {
+                        opacity: 1;
+                        transform: scale(1);
+                    }
+                }
+
+                .animate-fade-in {
+                    animation: fadeIn 0.5s ease-out forwards;
+                }
+            </style>
+        </div>
+
+        <!-- Bottom Wave -->
+        <svg class="absolute bottom-0 left-0 w-full text-white z-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
+            style="height: 60px;">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                fill="currentColor"></path>
+        </svg>
+    </section>
+
+    <!-- Part 1: History (Evolution) -->
+    <section id="history" class="py-20 pb-28 bg-white relative">
+        <div class="container mx-auto px-6 max-w-5xl">
+            <div class="text-center mb-20">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">從藝術到科學：摺紙的演變</h2>
+                <div class="w-16 h-1 bg-orange-400 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- Item 1: Akira Yoshizawa -->
+            <div class="flex flex-col md:flex-row items-center gap-8 md:gap-12 mb-24">
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-sm md:max-w-md aspect-[4/3] cursor-pointer group perspective-1000"
+                        onclick="toggleStack(this)">
+
+
+                        <!-- Artist Photo (Back) -->
+                        <img src="assets/Akira_Yoshizawa.jpg"
+                            class="stack-back absolute inset-0 w-full h-full object-cover rounded-3xl shadow-xl transform translate-x-4 translate-y-4 rotate-3 transition duration-700 ease-out z-10 brightness-75 group-hover:brightness-100"
+                            alt="Akira Yoshizawa">
+
+                        <!-- Artwork (Front) -->
+                        <img src="assets/吉澤章.jpeg"
+                            class="stack-front absolute inset-0 w-full h-full object-cover rounded-3xl shadow-2xl transform -rotate-2 transition duration-700 ease-out z-20"
+                            alt="Origami Diagram">
+
+
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pl-10">
+                    <div class="pl-6 border-l-4 border-orange-400">
+                        <span class="text-orange-500 font-bold tracking-widest text-sm mb-2 block">HISTORY OF
+                            ORIGAMI</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">歷史轉折點：摺紙語言的誕生</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            摺紙在日本已有400多年歷史，但真正的文藝復興發生在20世紀。現代摺紙大師 <b>吉澤章 (Akira Yoshizawa)</b>
+                            發明了一套由「點、線、箭頭」組成的通用語言。這套系統讓複雜的摺法得以被精確記錄並傳播到全世界，正式奠定了現代摺紙工程學的基礎。
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Item 2: Robert Lang -->
+            <div class="flex flex-col md:flex-row-reverse items-center gap-8 md:gap-12">
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <div class="relative w-full max-w-sm md:max-w-md aspect-[4/3] cursor-pointer group perspective-1000"
+                        onclick="toggleStack(this)">
+
+
+                        <!-- Artist Photo (Back) -->
+                        <img src="assets/Robert_Lang.jpg"
+                            class="stack-back absolute inset-0 w-full h-full object-cover rounded-3xl shadow-xl transform -translate-x-4 translate-y-4 -rotate-3 transition duration-700 ease-out z-10 brightness-75 group-hover:brightness-100"
+                            alt="Robert Lang">
+
+                        <!-- Artwork (Front) -->
+                        <img src="assets/origami_cactus.jpg"
+                            class="stack-front absolute inset-0 w-full h-full object-cover rounded-3xl shadow-2xl transform rotate-2 transition duration-700 ease-out z-20"
+                            alt="Origami Cactus">
+
+
+                    </div>
+                </div>
+                <div class="md:w-1/2 md:pr-10">
+                    <div class="pr-6 border-r-4 border-teal-400 text-right">
+                        <span class="text-teal-500 font-bold tracking-widest text-sm mb-2 block">TECHNICAL
+                            ORIGAMI</span>
+                        <h3 class="text-2xl font-bold text-gray-800 mb-4">現代摺紙的極致：一張紙的奇蹟</h3>
+                        <p class="text-gray-600 leading-relaxed text-lg">
+                            傳統摺紙允許多張紙拼接，但現代「技術摺紙」挑戰極限：<b>「只用一張正方形紙、完全不剪裁」</b>。
+                            <br><br>
+                            像大師 <b>Robert Lang</b> 僅用一張紙就能摺出帶有數百根刺的仙人掌，這不只是藝術，更是極度精密的數學運算成果。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wave to Advantages -->
+        <svg class="absolute bottom-0 left-0 w-full text-gray-50 z-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
+            style="height: 60px;">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                fill="currentColor"></path>
+        </svg>
+    </section>
+
+    <!-- Part 2: Core Engineering Advantages -->
+    <section id="advantages" class="py-24 bg-gray-50 relative overflow-hidden">
+        <!-- Background Decor -->
+        <div
+            class="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 transform translate-x-1/2 -translate-y-1/2">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-64 h-64 bg-teal-100 rounded-full mix-blend-multiply filter blur-3xl opacity-70 transform -translate-x-1/2 translate-y-1/2">
+        </div>
+
+        <div class="container mx-auto px-6 max-w-5xl relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">為什麼需要摺紙？</h2>
+                <div class="w-16 h-1 bg-indigo-500 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="space-y-16">
+                <!-- Advantage 1: Transformation -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3">
+                        <div id="advantage-canvas-1" class="w-full h-64 bg-white rounded-2xl shadow-lg overflow-hidden">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 rounded-full bg-orange-100 text-orange-600 flex items-center justify-center text-2xl">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">形狀變換 (Transformation)</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            摺紙能以極少的加工程序與材料成本，將一張簡單的平面材料（2D）瞬間轉換為複雜且功能強大的立體結構（3D）。這項特性完美解決了現代製造業與航太工程中「如何將運送時的大物體有效微縮化，並在抵達目的地後精確展開」的極限難題。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 2: Rigidity -->
+                <div class="flex flex-col md:flex-row-reverse items-center gap-8">
+                    <div class="w-full md:w-1/3">
+                        <div id="advantage-canvas-2" class="w-full h-64 bg-white rounded-2xl shadow-lg overflow-hidden">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-2xl">
+                                <i class="fas fa-compress-arrows-alt"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">與生俱來的剛性 (Rigidity)</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            試試看：一張平整的紙張原本柔軟無力，但只要依照特定的幾何規律摺出幾道痕跡，它就能獲得驚人的結構強度並承受數倍於自身的重量。透過精密的幾何摺疊設計，我們可以讓柔軟的薄膜瞬間變得堅固無比，成為可承重的建築結構。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Advantage 3: Bi-stable -->
+                <div class="flex flex-col md:flex-row items-center gap-8">
+                    <div class="w-full md:w-1/3">
+                        <div id="advantage-canvas-3" class="w-full h-64 bg-white rounded-2xl shadow-lg overflow-hidden">
+                        </div>
+                    </div>
+                    <div class="w-full md:w-2/3">
+                        <div class="flex items-center gap-4 mb-4">
+                            <div
+                                class="w-14 h-14 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-2xl">
+                                <i class="fas fa-toggle-on"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800">雙穩態機制 (Bi-stable)</h3>
+                        </div>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            摺紙結構可以被精妙地設計成具有「雙穩態」特性，這意味著它在完全「收納」與完全「展開」的兩種狀態下都能保持物理上的穩定平衡。這種機制不需要額外的馬達或持續的能量來維持開合狀態，對於資源極度受限的太空任務或微型醫療機器人來說至關重要。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Part 4: Origami Lab (Dark Section + Updated Grid) -->
+    <section id="lab-section" class="lab-section py-24">
+        <!-- 頂部裝飾 -->
+        <svg class="absolute top-0 left-0 w-full h-16 text-[#0f172a] transform -translate-y-[99%] rotate-180 z-20"
+            viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                fill="currentColor"></path>
+        </svg>
+
+        <div class="container mx-auto px-6 pt-10">
+            <!-- Lab Header -->
+            <div class="mb-16 border-b border-gray-700 pb-8">
+                <div class="text-teal-400 font-mono text-sm tracking-widest mb-2">CLASSIFIED ARCHIVES</div>
+                <h2 class="text-4xl md:text-5xl font-bold text-white mb-4">黑科技實驗室 <span
+                        class="text-gray-600 text-3xl">LAB</span></h2>
+                <p class="text-gray-400 text-lg max-w-3xl">這裡收藏了科學家如何利用「摺疊」解決醫療、建築與安全難題的真實案例。</p>
+            </div>
+
+            <!-- Lab Grid -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <!-- [NEW] Shield -->
+                <article class="lab-card rounded-2xl overflow-hidden group" onclick="openModal('shield')">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="assets/images/origami_bulletproof_shield.png" alt="可摺疊防彈盾牌 - Yoshimura 摺疊結構"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                        <div
+                            class="absolute top-4 right-4 bg-gray-800/90 text-white text-xs font-bold px-2 py-1 rounded shadow-lg border border-gray-600">
+                            POLICE</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-gray-700 flex items-center justify-center">
+                                <i class="fas fa-shield-alt text-white"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">可摺疊防彈盾牌</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            BYU 大學研發。利用「吉村摺疊 (Yoshimura)」結構，將防彈盾牌收在警車後廂，展開後能擋下從手槍到步槍的子彈。
+                        </p>
+                    </div>
+                </article>
+
+                <article class="lab-card rounded-2xl overflow-hidden group" onclick="openModal('forceps')">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="assets/forceps_cover.jpg" alt="Micro-Surgical Forceps"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                        <div
+                            class="absolute top-4 right-4 bg-indigo-500/90 text-white text-xs font-bold px-2 py-1 rounded shadow-lg">
+                            MEDICAL DEVICE</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-indigo-500/20 flex items-center justify-center">
+                                <i class="fas fa-robot text-indigo-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">微型手術夾爪</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            楊百翰大學研發 (Oriceps)。無鉸鏈摺紙設計，零件減少75%，專為達文西微創手術設計，能進入人體更深處。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- [NEW] Train -->
+                <article class="lab-card rounded-2xl overflow-hidden group" onclick="openModal('train')">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="assets/R211T_soft_shell_open_gangway.jpg" alt="Train Gangway Bellows"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                        <div
+                            class="absolute top-4 right-4 bg-blue-500/90 text-white text-xs font-bold px-2 py-1 rounded shadow-lg">
+                            TRANSPORT</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center">
+                                <i class="fas fa-link text-blue-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">高鐵的蛇腹外衣</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            就像手風琴一樣！車廂連接處利用「蛇腹摺疊」，讓列車在高速轉彎時能自由伸縮，同時保持外觀平滑，大幅降低風切聲與空氣阻力。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- Existing Items (Updated Titles/Tags) -->
+                <!-- [NEW] Bridge -->
+                <article class="lab-card rounded-2xl overflow-hidden group" onclick="openModal('bridge')">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://materialdistrict.com/wp-content/uploads/2015/09/build-a-bridge-house-or-spacecraft-with-this-super-strong-origami-01-631x400.jpg"
+                            alt="Origami Bridge"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                        <div
+                            class="absolute top-4 right-4 bg-orange-500/90 text-white text-xs font-bold px-2 py-1 rounded shadow-lg">
+                            CIVIL ENGINEERING</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-orange-500/20 flex items-center justify-center">
+                                <i class="fas fa-archway text-orange-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">摺疊橋樑</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            解決了厚鋼板摺疊的物理難題。這項技術能讓卡車載運的橋樑在災區快速展開，也能用於建設月球基地。
+                        </p>
+                    </div>
+                </article>
+
+
+
+                <!-- Airbag -->
+                <article class="lab-card rounded-2xl overflow-hidden group" onclick="openModal('airbag')">
+                    <div class="h-56 overflow-hidden relative">
+                        <img src="https://cdn.prod.www.spiegel.de/images/9fa8157e-0001-0004-0000-000001053983_w1840_r1.3268229166666667_fpx60.26_fpy50.webp"
+                            alt="Airbag Folding"
+                            class="w-full h-full object-cover transition duration-700 group-hover:scale-110 opacity-90 group-hover:opacity-100">
+                        <div
+                            class="absolute top-4 right-4 bg-yellow-500/90 text-black text-xs font-bold px-2 py-1 rounded shadow-lg">
+                            SAFETY</div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center gap-3 mb-3">
+                            <div class="w-10 h-10 rounded-full bg-yellow-500/20 flex items-center justify-center">
+                                <i class="fas fa-car-crash text-yellow-500"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-white">安全氣囊演算法</h3>
+                        </div>
+                        <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                            為了確保氣囊在幾毫秒內不打結展開，科學家使用高階數學演算法來模擬氣囊的最佳摺疊路徑。
+                        </p>
+                    </div>
+                </article>
+
+                <!-- [NEW] Placeholder: In Space -->
+                <article
+                    class="lab-card rounded-2xl overflow-hidden group flex items-center justify-center bg-white/5 border-2 border-dashed border-white/20 hover:border-white/40 transition-all cursor-default min-h-[400px]">
+                    <div class="text-center px-4">
+                        <div
+                            class="w-20 h-20 rounded-full bg-indigo-500/10 flex items-center justify-center mx-auto mb-6 animate-bounce">
+                            <i class="fas fa-arrow-down text-3xl text-indigo-400"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-400 mb-2">那摺紙如何應用在太空中呢....?</h3>
+                        <p class="text-indigo-400 font-mono text-sm mt-2">Let's explore below <i
+                                class="fas fa-level-down-alt ml-1"></i></p>
+                    </div>
+                </article>
+
+            </div>
+
+            <!-- Miura-ori 3D Demo (Full Width Display) -->
+            <div class="mt-16 pt-16 border-t border-gray-700">
+                <div class="flex flex-col lg:flex-row items-center gap-12">
+                    <div class="lg:w-1/3">
+                        <div
+                            class="inline-block bg-blue-500/20 text-blue-400 px-3 py-1 rounded-lg text-sm font-bold mb-4">
+                            <i class="fas fa-space-shuttle mr-2"></i>SPACE TECHNOLOGY
+                        </div>
+                        <h3 class="text-3xl font-bold text-white mb-6">三浦摺疊 (Miura-ori)</h3>
+                        <p class="text-lg text-gray-400 mb-6 leading-relaxed">
+                            這是有史以來最經典的摺紙工程應用。1995年，日本科學家<b
+                                class="text-white">三浦公亮</b>發明了一種摺法，能讓巨大的太陽能板「一次性」順暢展開，完全不需要複雜的機械手臂。
+                        </p>
+                        <p class="text-lg text-gray-400 leading-relaxed">
+                            <i class="fas fa-check-circle text-teal-400 mr-2"></i>只要拉對角線，整個結構同時展開。
+                        </p>
+                    </div>
+
+                    <div class="lg:w-2/3 w-full flex flex-col items-center justify-center">
+                        <div class="relative group w-full max-w-2xl mx-auto" id="space-gallery" style="height: 400px;">
+                            <!-- Images Container -->
+                            <div
+                                class="relative w-full h-full bg-black/5 rounded-2xl overflow-hidden border border-white/10 shadow-2xl backdrop-blur-sm">
+                                <!-- Image 1: Miura-ori -->
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Miura-ori.gif"
+                                    alt="Miura-ori 摺疊"
+                                    class="gallery-img absolute inset-0 w-full h-full object-contain p-4 transition-all duration-500 ease-out"
+                                    data-index="0" data-title="Miura-ori 三浦摺疊" style="opacity: 1; z-index: 40;">
+
+                                <!-- Image 2: NASA Starshade -->
+                                <img src="https://www.nasa.gov/wp-content/uploads/2023/02/edu_srch_make_your_own_starshade_0.gif?w=320"
+                                    alt="NASA Starshade"
+                                    class="gallery-img absolute inset-0 w-full h-full object-contain p-4 transition-all duration-500 ease-out"
+                                    data-index="1" data-title="NASA 星遮 Starshade" style="opacity: 0; z-index: 30;">
+
+                                <!-- Image 3: ESA Heat Shield -->
+                                <img src="https://www.esa.int/var/esa/storage/images/esa_multimedia/images/2023/05/origami_heat_shield_reusable_for_reentries/24887340-1-eng-GB/Origami_heat_shield_reusable_for_reentries_pillars.gif"
+                                    alt="ESA Origami Heat Shield"
+                                    class="gallery-img absolute inset-0 w-full h-full object-contain p-4 transition-all duration-500 ease-out"
+                                    data-index="2" data-title="ESA 摺紙隔熱盾" style="opacity: 0; z-index: 20;">
+
+                                <!-- Image 4: Solar Panel -->
+                                <img src="https://i.makeagif.com/media/11-12-2018/raKcW7.gif"
+                                    alt="Solar Panel Deployment"
+                                    class="gallery-img absolute inset-0 w-full h-full object-contain p-4 transition-all duration-500 ease-out"
+                                    data-index="3" data-title="太陽能板展開" style="opacity: 0; z-index: 10;">
+
+                                <!-- Click hint (inside container) -->
+                                <div
+                                    class="absolute top-4 left-4 bg-black/40 backdrop-blur-md text-white/80 text-xs px-3 py-1 rounded-full z-50 opacity-0 group-hover:opacity-100 transition pointer-events-none border border-white/10">
+                                    <i class="fas fa-hand-pointer mr-1"></i> 點擊切換
+                                </div>
+
+                                <!-- Status overlay (inside container) -->
+                                <div
+                                    class="absolute bottom-4 right-4 bg-black/80 text-green-400 px-3 py-1.5 rounded-lg text-[10px] font-mono z-50 pointer-events-none shadow-lg border border-green-900/50">
+                                    SYSTEM: SOLAR ARRAY<br>STATUS: DEPLOYING
+                                </div>
+                            </div>
+
+                            <!-- Left Click Zone (Previous) - Outside container slightly or full height -->
+                            <div class="absolute -left-4 top-0 w-16 h-full cursor-pointer z-50 flex items-center justify-center group/nav"
+                                onclick="cycleSpaceGallery(-1)">
+                                <div
+                                    class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform group-hover/nav:scale-110 shadow-lg border border-white/10">
+                                    <i class="fas fa-chevron-left text-sm"></i>
+                                </div>
+                            </div>
+
+                            <!-- Right Click Zone (Next) -->
+                            <div class="absolute -right-4 top-0 w-16 h-full cursor-pointer z-50 flex items-center justify-center group/nav"
+                                onclick="cycleSpaceGallery(1)">
+                                <div
+                                    class="bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white w-10 h-10 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all transform group-hover/nav:scale-110 shadow-lg border border-white/10">
+                                    <i class="fas fa-chevron-right text-sm"></i>
+                                </div>
+                            </div>
+
+                            <!-- Indicator dots (Below container) -->
+                            <div class="absolute -bottom-8 left-1/2 -translate-x-1/2 flex gap-2 z-50" id="gallery-dots">
+                                <button
+                                    class="w-2 h-2 rounded-full bg-white transition-all duration-300 hover:scale-125"
+                                    data-dot="0" onclick="goToSpaceGallerySlide(0)"></button>
+                                <button
+                                    class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 hover:scale-125"
+                                    data-dot="1" onclick="goToSpaceGallerySlide(1)"></button>
+                                <button
+                                    class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 hover:scale-125"
+                                    data-dot="2" onclick="goToSpaceGallerySlide(2)"></button>
+                                <button
+                                    class="w-2 h-2 rounded-full bg-white/30 transition-all duration-300 hover:scale-125"
+                                    data-dot="3" onclick="goToSpaceGallerySlide(3)"></button>
+                            </div>
+                        </div>
+
+                        <!-- Caption (Below everything) -->
+                        <p class="text-center text-sm text-gray-500 mt-12 opacity-80 font-medium tracking-wide"
+                            id="space-gallery-caption">
+                            * Miura-ori 三浦摺疊 (1/4)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 底部裝飾 -->
+        <svg class="absolute bottom-0 left-0 w-full h-12 text-gray-50 bg-transparent z-0" viewBox="0 0 1200 120"
+            preserveAspectRatio="none">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,738.64,14.65c-100-19.11-198.3-13.13-257.55,1.52S321.39,56.44,321.39,56.44c-30.86,4.89-60.61,7.24-88.75,7C172.07,62.88,96.53,51.81,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                fill="currentColor"></path>
+        </svg>
+    </section>
+
+    <!-- Part 6: Video Section (Full Screen) -->
+    <section class="min-h-screen flex flex-col items-center justify-center bg-gray-50 py-12 px-6 relative">
+        <div class="text-center mb-8">
+            <h2 class="text-3xl font-bold text-gray-800">延伸閱讀</h2>
+            <p class="text-gray-500 mt-2">Engineering with Origami - Veritasium</p>
+        </div>
+        <div class="w-full max-w-5xl overflow-hidden">
+            <!-- 16:9 aspect ratio container -->
+            <div class="relative w-full bg-gray-900 rounded-3xl overflow-hidden shadow-2xl"
+                style="padding-bottom: 56.25%;">
+                <iframe class="absolute top-0 left-0 w-full h-full rounded-3xl"
+                    src="https://www.youtube-nocookie.com/embed/ThwuT3_AG6w?rel=0&modestbranding=1"
+                    title="Veritasium Origami Video" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- Wave to Workshop -->
+        <svg class="absolute bottom-0 left-0 w-full z-0" viewBox="0 0 1200 120" preserveAspectRatio="none"
+            style="height: 60px;">
+            <path
+                d="M985.66,92.83C906.67,72,823.78,31,738.64,14.65c-100-19.11-198.3-13.13-257.55,1.52S321.39,56.44,321.39,56.44c-30.86,4.89-60.61,7.24-88.75,7C172.07,62.88,96.53,51.81,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                fill="#FFF8E1"></path>
+        </svg>
+    </section>
+
+    <!-- Part 7: Workshop Levels (Warm Theme + Horse Decor) -->
+    <section class="py-24 relative overflow-hidden" style="background-color: #FFF8E1;">
+        <div class="container mx-auto px-6 max-w-6xl relative z-10">
+            <h2 class="text-4xl font-bold text-gray-800 mb-16 text-center">準備好動手嘗試了嗎？</h2>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Level 1 -->
+                <div
+                    class="bg-white rounded-[32px] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center hover:-translate-y-2 transition duration-300">
+                    <div class="text-xs font-bold text-gray-400 tracking-[0.2em] mb-4">LEVEL 1</div>
+                    <h3 class="text-2xl font-bold text-orange-500 mb-8">平面與立體</h3>
+
+                    <div class="space-y-4 w-full mb-10 flex-grow px-4">
+                        <div class="flex items-center text-gray-600 font-medium">
+                            <i class="fas fa-check text-green-500 mr-3"></i> 馬年紅包袋
+                        </div>
+                        <div class="flex items-center text-gray-600 font-medium">
+                            <i class="fas fa-check text-green-500 mr-3"></i> 翻轉馬
+                        </div>
+                    </div>
+
+                    <div class="w-full bg-orange-100 text-orange-600 font-bold py-3 rounded-xl text-center">
+                        低年級 Lab
+                    </div>
+                </div>
+
+                <!-- Level 2 -->
+                <div
+                    class="bg-white rounded-[32px] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center hover:-translate-y-2 transition duration-300">
+                    <div class="text-xs font-bold text-gray-400 tracking-[0.2em] mb-4">LEVEL 2</div>
+                    <h3 class="text-2xl font-bold text-teal-500 mb-8">動力與旋轉</h3>
+
+                    <div class="space-y-4 w-full mb-10 flex-grow px-4">
+                        <div class="flex items-center text-gray-600 font-medium">
+                            <i class="fas fa-check text-green-500 mr-3"></i> 馬年紅包袋
+                        </div>
+                        <div class="flex items-center text-gray-600 font-medium">
+                            <i class="fas fa-check text-green-500 mr-3"></i> 紙陀螺
+                        </div>
+                    </div>
+
+                    <div class="w-full bg-teal-100 text-teal-600 font-bold py-3 rounded-xl text-center">
+                        中年級 Lab
+                    </div>
+                </div>
+
+                <!-- Level 3 -->
+                <div
+                    class="bg-white rounded-[32px] p-8 shadow-[0_10px_40px_rgba(0,0,0,0.05)] border border-gray-100 flex flex-col items-center hover:-translate-y-2 transition duration-300">
+                    <div class="text-xs font-bold text-gray-400 tracking-[0.2em] mb-4">LEVEL 3</div>
+                    <h3 class="text-2xl font-bold text-indigo-500 mb-8">結構與拓撲</h3>
+
+                    <div class="space-y-4 w-full mb-10 flex-grow px-4">
+                        <div class="flex items-center text-gray-600 font-medium">
+                            <i class="fas fa-check text-green-500 mr-3"></i> 馬年紅包袋
+                        </div>
+                        <div class="flex items-center text-gray-600 font-medium">
+                            <i class="fas fa-check text-green-500 mr-3"></i> 魔術方塊
+                        </div>
+                    </div>
+
+                    <div class="w-full bg-indigo-100 text-indigo-600 font-bold py-3 rounded-xl text-center">
+                        高年級 Lab
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Horse Decorations (Full Pattern like #intro) -->
+        <!-- Row 1 (Top) -->
+        <div class="absolute top-[8%] left-6 opacity-10"><i class="fas fa-horse text-9xl text-orange-300 rotate-15"></i>
+        </div>
+        <div class="absolute top-[12%] left-[25%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-20"></i></div>
+        <div class="absolute top-[6%] right-[30%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-25"></i></div>
+        <div class="absolute top-[10%] right-[10%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-12"></i></div>
+        <div class="absolute top-[14%] right-4 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-18"></i></div>
+        <!-- Row 2 -->
+        <div class="absolute top-[28%] left-4 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-10"></i></div>
+        <div class="absolute top-[32%] left-[20%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-22"></i></div>
+        <div class="absolute top-[26%] left-[45%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-28"></i></div>
+        <div class="absolute top-[30%] right-[22%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-8"></i></div>
+        <div class="absolute top-[34%] right-6 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-32"></i></div>
+        <!-- Row 3 -->
+        <div class="absolute bottom-[30%] left-8 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-20"></i></div>
+        <div class="absolute bottom-[35%] left-[28%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-15"></i></div>
+        <div class="absolute bottom-[28%] right-[35%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-30"></i></div>
+        <div class="absolute bottom-[32%] right-[12%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 -rotate-22"></i></div>
+        <div class="absolute bottom-[36%] right-4 opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 rotate-12"></i></div>
+        <!-- Row 4 (Bottom) -->
+        <div class="absolute bottom-[12%] left-6 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-25"></i></div>
+        <div class="absolute bottom-[16%] left-[22%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-18"></i></div>
+        <div class="absolute bottom-[10%] left-[48%] opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-15"></i></div>
+        <div class="absolute bottom-[14%] right-[25%] opacity-10"><i
+                class="fas fa-horse text-9xl text-orange-300 -rotate-25"></i></div>
+        <div class="absolute bottom-[18%] right-8 opacity-8"><i
+                class="fas fa-horse text-8xl text-orange-200 rotate-10"></i></div>
+
+        <!-- Footer Info (merged) -->
+        <div class="text-center mt-16 text-gray-500 text-sm relative z-10">
+            <p>Wen Tzao Winter Camp | 台灣摺紙協會 © 2026</p>
+            <p class="opacity-70 mt-1">Art of Origami Project</p>
+        </div>
+    </section>
+
+    <!-- Modal (Fullscreen)-->
+    <div id="detail-modal" class="hidden fixed inset-0 z-50 bg-black/95 backdrop-blur-md text-left"
+        onclick="if(event.target === this) closeModal()">
+        <div class="bg-gray-900 w-full h-full overflow-hidden flex flex-col md:flex-row relative">
+
+            <!-- Close Button -->
+            <button onclick="closeModal()"
+                class="absolute top-6 right-6 z-30 bg-white/10 hover:bg-white/20 text-white w-12 h-12 rounded-full flex items-center justify-center transition backdrop-blur-md border border-white/20">
+                <i class="fas fa-times text-xl"></i>
+            </button>
+
+            <!-- Media Column (Left - takes most of the screen) -->
+            <div
+                class="w-full md:w-3/5 lg:w-2/3 bg-black relative flex items-center justify-center h-[40vh] md:h-full overflow-hidden">
+
+                <!-- Dynamic Media Slider Container -->
+                <div class="w-full h-full relative" id="media-slider">
+                    <!-- Slides Track (slides horizontally) -->
+                    <div class="flex h-full transition-transform duration-500 ease-out" id="slides-track">
+                        <!-- Slides will be dynamically injected by JavaScript -->
+                    </div>
+
+                    <!-- Slider Navigation Arrows -->
+                    <button onclick="prevSlide()"
+                        class="absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white w-12 h-12 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+                        <i class="fas fa-chevron-left text-xl"></i>
+                    </button>
+                    <button onclick="nextSlide()"
+                        class="absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/40 text-white w-12 h-12 rounded-full flex items-center justify-center transition backdrop-blur-sm">
+                        <i class="fas fa-chevron-right text-xl"></i>
+                    </button>
+
+                    <!-- Slide Indicators (dynamically generated) -->
+                    <div class="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20" id="slide-indicators">
+                        <!-- Dots will be dynamically injected by JavaScript -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Column (Right - scrollable) -->
+            <div
+                class="w-full md:w-2/5 lg:w-1/3 p-6 md:p-10 flex flex-col bg-gray-900 text-white overflow-y-auto h-[60vh] md:h-full">
+                <div class="mb-6">
+                    <span id="modal-tag" class="text-xs font-bold tracking-widest text-teal-400 mb-3 block">TOPIC</span>
+                    <h2 id="modal-title" class="text-2xl md:text-4xl font-bold mb-2">Title</h2>
+                    <p id="modal-subtitle" class="text-gray-400 text-sm font-mono">Subtitle</p>
+                </div>
+
+                <div id="modal-stats"
+                    class="grid grid-cols-2 gap-4 mb-8 bg-gray-800/50 p-4 rounded-xl border border-gray-700/50">
+                    <!-- Stats injected by JS -->
+                </div>
+
+                <div id="modal-desc" class="prose prose-invert prose-sm text-gray-300 leading-relaxed flex-grow">
+                    <!-- Description injected by JS -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- External Script -->
+    <script src="script.js"></script>
+</body>
+
+</html>
