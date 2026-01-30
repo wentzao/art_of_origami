@@ -181,6 +181,9 @@ function openModal(id) {
     const data = labData[id];
     if (!data) return;
 
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+
     document.getElementById('modal-title').textContent = data.title;
     document.getElementById('modal-subtitle').textContent = data.subtitle;
     document.getElementById('modal-tag').textContent = data.tag;
@@ -206,6 +209,9 @@ function openModal(id) {
 
 function closeModal() {
     document.getElementById('detail-modal').classList.add('hidden');
+    // Restore background scrolling
+    document.body.style.overflow = '';
+
     // Stop all videos by clearing slider
     const slidesTrack = document.getElementById('slides-track');
     if (slidesTrack) {
