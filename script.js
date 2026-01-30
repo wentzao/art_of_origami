@@ -718,7 +718,29 @@ window.goToSpaceGallerySlide = goToSpaceGallerySlide;
 // Advantage Section Three.js Animations
 // ============================================
 
+// Helper to detect Mobile or Low-end devices
+function isMobileOrLegacy() {
+    // 1. Check User Agent for mobile devices
+    const isMobileUA = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+
+    // 2. Check Screen Width (typical breakpoint)
+    const isSmallScreen = window.innerWidth < 768;
+
+    // 3. Check for WebGL support
+    let hasWebGL = false;
+    try {
+        const canvas = document.createElement('canvas');
+        hasWebGL = !!(window.WebGLRenderingContext && (canvas.getContext('webgl') || canvas.getContext('experimental-webgl')));
+    } catch (e) {
+        hasWebGL = false;
+    }
+
+    return isMobileUA || isSmallScreen || !hasWebGL;
+}
+
 function initAdvantageAnimations() {
+    // If mobile/legacy, the individual init functions will handle showing the video
+    // We just call them as usual, and they will decide what to render.
     initTransformationDemo();
     initRigidityDemo();
     initBistableDemo();
@@ -728,6 +750,17 @@ function initAdvantageAnimations() {
 function initTransformationDemo() {
     const container = document.getElementById('advantage-canvas-1');
     if (!container) return;
+
+    // Fallback Check
+    if (isMobileOrLegacy()) {
+        const video = document.getElementById('video-fallback-1');
+        if (video) {
+            video.classList.remove('hidden');
+            // Try to play (autoplay is set, but explicit play is safer)
+            video.play().catch(e => console.log('Video 1 Autoplay prevented:', e));
+        }
+        return; // Skip Three.js initialization
+    }
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xfff8f0);
@@ -962,10 +995,20 @@ function initTransformationDemo() {
     animate();
 }
 
-// Animation 2: Flat Paper → Corrugated (Accordion Fold) Transformation
+// Animation 2: Corrugated Sheet (Rigidity)
 function initRigidityDemo() {
     const container = document.getElementById('advantage-canvas-2');
     if (!container) return;
+
+    // Fallback Check
+    if (isMobileOrLegacy()) {
+        const video = document.getElementById('video-fallback-2');
+        if (video) {
+            video.classList.remove('hidden');
+            video.play().catch(e => console.log('Video 2 Autoplay prevented:', e));
+        }
+        return;
+    }
 
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0xfdf2f8);
@@ -1214,6 +1257,16 @@ function initRigidityDemo() {
 function initBistableDemo() {
     const container = document.getElementById('advantage-canvas-3');
     if (!container) return;
+
+    // Fallback Check
+    if (isMobileOrLegacy()) {
+        const video = document.getElementById('video-fallback-3');
+        if (video) {
+            video.classList.remove('hidden');
+            video.play().catch(e => console.log('Video 3 Autoplay prevented:', e));
+        }
+        return;
+    }
 
     // --- Scene Setup ---
     const scene = new THREE.Scene();
