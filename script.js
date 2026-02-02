@@ -123,8 +123,8 @@ const labData = {
         subtitle: 'Train Gangway Bellows',
         tag: 'TRANSPORTATION',
         media: [
-            { type: 'image', src: 'assets/R211T_soft_shell_open_gangway.jpg' },
-            { type: 'image', src: 'assets/gangway-connector.jpg' },
+            { type: 'image', src: 'assets/images/R211T_soft_shell_open_gangway.jpg' },
+            { type: 'image', src: 'assets/images/gangway-connector.jpg' },
             { type: 'video', id: 'x3EtHiZ9KAY' }
         ],
         stats: {
@@ -162,7 +162,7 @@ const labData = {
         tag: 'MEDICAL DEVICE',
         media: [
             { type: 'video', id: 'L_9BDZ6ZBwk' },
-            { type: 'image', src: 'assets/forceps_cover.jpg' },
+            { type: 'image', src: 'assets/images/forceps_cover.jpg' },
             { type: 'image', src: 'https://3dprintingindustry.com/wp-content/uploads/2016/03/feature-3D-printed-origami-surgical-device-byu-1.gif' }
         ],
         stats: {
